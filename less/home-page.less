@@ -2,7 +2,19 @@
 
 .home {
 
+
+  @media @phone {
+    display: flex;
+    flex-direction: column;
+  }
+
   .intro {
+
+
+      @media @phone {
+        width: auto;
+        height: auto;
+    }
 
     h2 {
       padding: 15px;
@@ -11,13 +23,44 @@
     p {
       padding:0 15px;
     }
+
   
+  }
+
+  .container {
+    
+
+    @media @phone {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .space-images {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+
+    .blast {
+      @media @phone {
+        width: 100%;
+        height:auto;
+      }
+    }
+
+  
+    .sky {
+
+      @media @phone {
+        visibility: hidden;
+      }
+    }
+
+      .launch {
+        @media @phone {
+          visibility: hidden;
+        }
+      }
 
     img {
       width: 28%;
@@ -41,10 +84,17 @@
 
   .walk {
     margin-top: 60px;
-    border-top: 1px solid @main-border-color;
+    border-top: 1px solid @ebony-clay;
     padding: 50px 60px;
-    display: flex;
-    justify-content: center;
+    .displayflex();
+
+    @media @phone {
+        width: 100vw;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;        
+      }
+  
 
     .walk-text {
       width: 50%;
@@ -57,13 +107,39 @@
         margin-bottom: 26px;
       }
 
-      .btn {
-      }
+        button {
+          border: 1px solid @ebony-clay;
+          padding:4%;
+          font-size: medium;
+          background-color: @ebony-clay;
+          color: white;
+          letter-spacing: 1pt;
+          border-radius: 10px;
+          cursor: pointer;
+
+          @media @phone {
+            width: 100%;
+          }
+        
+          &:hover {
+            background-color: lighten(@ebony-clay, 50%);
+            color: black
+          } // button hover
+
+
+        
+        } // button
+        
     }
 
     .walk-img {
       width: 46%;
       margin-left: 4%;
+
+      @media @phone {
+        width: 100%;
+        height:auto;
+      }
       
       img {
         width: 100%;
@@ -72,4 +148,4 @@
       }
     }
   }
-}// home
+}
