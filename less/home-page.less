@@ -3,6 +3,24 @@
 .home {
 
   .intro {
+  
+    padding-bottom: 2%;
+   
+
+      @media @phone {
+        width: auto;
+        height: auto;
+    }
+
+    .img-header {
+      width: 100%;
+      margin-top: 13%;
+
+      @media @phone {
+        width: 100%;
+        margin-top: auto;
+      }
+    }
 
     h2 {
       padding: 15px;
@@ -11,7 +29,17 @@
     p {
       padding:0 15px;
     }
+
   
+  }
+
+  .container {
+    
+
+    @media @phone {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   .space-images {
@@ -19,11 +47,42 @@
     flex-wrap: wrap;
     width: 100%;
 
+      @media @phone {
+        padding-left: 1%;
+        padding-right: 0;
+      }
+
+    .blast {
+
+      @media @phone {
+        width: 100%;
+        height:auto;
+      }
+    }
+
+  
+    .sky {
+
+      @media @phone {
+        display: none;
+      }
+    }
+
+      .launch {
+        @media @phone {
+          display: none;
+        }
+      }
+
     img {
       width: 28%;
       margin: 20px 2.5%;
       border-radius: 20px;
       height: 100%;
+
+        // @media @phone {
+        //   width: auto;
+        // }
     }
   }
 
@@ -41,13 +100,27 @@
 
   .walk {
     margin-top: 60px;
-    border-top: 1px solid @main-border-color;
+    // border-top: 1px solid @ebony-clay;
     padding: 50px 60px;
-    display: flex;
-    justify-content: center;
+    .displayflex();
+
+    @media @phone {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center; 
+        align-content: center;
+        margin: auto;
+        padding: inherit;
+      }
+  
 
     .walk-text {
-      width: 50%;
+      width: 100%;
+
+        @media @phone {
+          width:100%;
+          padding: 3%;
+        }
 
       h3 {
         margin-bottom: 10px;
@@ -57,19 +130,59 @@
         margin-bottom: 26px;
       }
 
-      .btn {
-      }
+        button {
+          border: 1px solid @ebony-clay;
+          padding:4%;
+          .buttonmix(medium, white);
+          background-color: @ebony-clay;
+          
+          letter-spacing: 1pt;
+          border-radius: 10px;
+          cursor: pointer;
+
+          @media @phone {
+            width: 100%;
+            background-color: violet;
+            color: black;
+          }
+        
+          &:hover {
+            background-color: lighten(@ebony-clay, 50%);
+            color: black;
+
+            @media @phone {
+              background-color: lighten(blue, 20%);
+              color: white;
+            }
+          } // button hover
+
+
+        
+        } // button
+        
     }
 
     .walk-img {
-      width: 46%;
-      margin-left: 4%;
+      // width: 46%;
+      // margin-left: 4%;
+      margin: 20px 2.5%;
+      border-radius: 20px;
+
+      @media @phone {
+        width: 95%;
+        height:auto;
+      }
       
       img {
         width: 100%;
         height: auto;
         border-radius: 10px;
+
+        @media @phone {
+          width: 100%;
+          height:auto;
+        }
       }
     }
   }
-}// home
+}
